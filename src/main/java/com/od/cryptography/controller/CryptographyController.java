@@ -19,13 +19,13 @@ public class CryptographyController {
     @Autowired
     private CryptographyService cryptographyService;
 
-    @GetMapping()
+    @GetMapping
     public String home(Model model) {
         model.addAttribute("appModel", new CryptographyModel());
         return "home";
     }
 
-    @PostMapping()
+    @PostMapping
     public String operation(@ModelAttribute CryptographyModel appModel, RedirectAttributes redirectAttributes) throws ValidationError {
         String result;
 
@@ -38,6 +38,7 @@ public class CryptographyController {
         }
 
         redirectAttributes.addFlashAttribute("resultText", result);
+        redirectAttributes.addFlashAttribute("inputModel", appModel);
         return "redirect:/";
     }
 
