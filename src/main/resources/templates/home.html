@@ -4,29 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
+<p>Gdzie chcesz przejść?</p>
 
-    <form action="#" th:action="@{/}" th:object="${appModel}" method="post">
-        <p>Tekst: <input type="text" th:field="*{text}"/></p>
-        <p>Przesunięcie: <input type="text" th:field="*{shift}"/></p>
-        <p>Klucz: <input type="text" th:field="*{key}"/></p>
-        <input type="radio" th:field="*{action}" th:value="ENCRYPTION"/> Enkrypcja
-        <input type="radio" th:field="*{action}" th:value="DECRYPTION"/> Dekrypcja </br>
-        <input type="radio" th:field="*{process}" th:value="CESAR"/> Szyfr Cezara
-        <input type="radio" th:field="*{process}" th:value="VINEGERE"/> Szyfr Vigenere'a
-        <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
-    </form>
-    </br>
-    <span th:if="${inputModel != null}">
-       <p th:text="'Tekst do szyfrowania: ' + ${inputModel.text}"/>
-        <span th:if="${inputModel.process == 'CESAR'}">
-            <p th:text="'Przesunięcie: ' + ${inputModel.shift}"/>
-        </span>
-        <span th:if="${inputModel.process == 'VINEGERE'}">
-            <p th:text="'Klucz: ' + ${inputModel.key}"/>
-        </span>
-    </span>
-    <span th:if="${resultText != null}">
-        <p th:text="'Zaszyfrowana wiadomość: ' + ${resultText}"/>
-    </span>
+<a th:href="@{/cryptography}"><button>Szyfrowanie</button></a>
+<a th:href="@{/validation}"><button>Walidacje</button></a>
+
 </body>
 </html>

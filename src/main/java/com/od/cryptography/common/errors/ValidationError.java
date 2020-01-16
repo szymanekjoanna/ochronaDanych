@@ -1,4 +1,4 @@
-package com.od.cryptography.errors;
+package com.od.cryptography.common.errors;
 
 public class ValidationError extends Exception {
 

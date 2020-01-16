@@ -1,6 +1,6 @@
-package com.od.cryptography.storage;
+package com.od.cryptography.cryptography.storage;
 
-import com.od.cryptography.errors.ValidationError;
+import com.od.cryptography.common.errors.ValidationError;
 
 import java.util.Arrays;
 

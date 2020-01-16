@@ -1,7 +1,7 @@
-package com.od.cryptography.service;
+package com.od.cryptography.cryptography.service;
 
-import com.od.cryptography.errors.ValidationError;
-import com.od.cryptography.storage.CryptographyStorage;
+import com.od.cryptography.cryptography.storage.CryptographyStorage;
+import com.od.cryptography.common.errors.ValidationError;
 import org.springframework.stereotype.Service;
 
 

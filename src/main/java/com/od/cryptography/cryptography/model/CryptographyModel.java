@@ -1,4 +1,4 @@
-package com.od.cryptography.model;
+package com.od.cryptography.cryptography.model;
 
 public class CryptographyModel {
 

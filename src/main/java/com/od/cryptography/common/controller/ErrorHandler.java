@@ -1,6 +1,6 @@
-package com.od.cryptography.controller;
+package com.od.cryptography.common.controller;
 
-import com.od.cryptography.errors.ValidationError;
+import com.od.cryptography.common.errors.ValidationError;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

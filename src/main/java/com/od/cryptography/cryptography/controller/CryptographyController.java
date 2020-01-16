@@ -1,28 +1,34 @@
-package com.od.cryptography.controller;
+package com.od.cryptography.cryptography.controller;
 
-import com.od.cryptography.errors.ValidationError;
-import com.od.cryptography.model.Action;
-import com.od.cryptography.model.CryptographyModel;
-import com.od.cryptography.model.Process;
-import com.od.cryptography.service.CryptographyService;
+import com.od.cryptography.common.errors.ValidationError;
+import com.od.cryptography.cryptography.model.Action;
+import com.od.cryptography.cryptography.model.CryptographyModel;
+import com.od.cryptography.cryptography.model.Process;
+import com.od.cryptography.cryptography.service.CryptographyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
+@RequestMapping(value = "/cryptography")
 public class CryptographyController {
 
+    private final CryptographyService cryptographyService;
+
     @Autowired
-    private CryptographyService cryptographyService;
+    public CryptographyController(CryptographyService cryptographyService) {
+        this.cryptographyService = cryptographyService;
+    }
 
     @GetMapping
-    public String home(Model model) {
+    public String cryptographyView(Model model) {
         model.addAttribute("appModel", new CryptographyModel());
-        return "home";
+        return "cryptography";
     }
 
     @PostMapping
@@ -39,7 +45,7 @@ public class CryptographyController {
 
         redirectAttributes.addFlashAttribute("resultText", result);
         redirectAttributes.addFlashAttribute("inputModel", appModel);
-        return "redirect:/";
+        return "redirect:/cryptography";
     }
 
     private String resolveCezar(@ModelAttribute CryptographyModel appModel) throws ValidationError {
